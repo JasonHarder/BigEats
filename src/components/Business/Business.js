@@ -2,7 +2,7 @@
 will be formatted and styled in the app. */
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './business.css'
+import './Business.css'
 
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
