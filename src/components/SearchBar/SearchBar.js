@@ -7,14 +7,7 @@ const sortByOptions= {
     'Most Reviewed' : 'review_count'
 }
 
-function getSortbyClass (sortByOption) {
-    if (this.sortBy.state === sortByOption) {
-        return 'active'
-    } else {
-        return ''
-    }
 
-}
 
 /*
 
@@ -24,13 +17,14 @@ refer to this.state since it is in the this.state object
 2. This Function Returns the current CSS class for a sorting option.
 */
 
-function handleSortByChange(sortByOption) {
-    this.setState(this.sortBy = sortByOption)
-}
+
 /*
 This second method (handleSortByChange) updates the state by calling .setState to set the state to the sortByOption
 this seems to mean that the css class should === the state.
 */
+
+
+
 class Searchbar extends React.Component {
     constructor(props) {
         super(props)
@@ -39,12 +33,22 @@ class Searchbar extends React.Component {
                 location: '',
                 sortBy: 'best_match'
             }
+        }
+    getSortbyClass = (sortByOption) => {
+    if (this.sortBy === sortByOption) {
+        return 'active'
+    } else {
+        return ''
+        }
+    }
 
+    handleSortByChange(sortByOption) {
+    this.setState(this.sortBy = sortByOption)
         }
     renderSortByOptions() {
         return Object.keys(sortByOptions).map(sortByOption => {
             let sortByOptionValue = sortByOptions[sortByOption];
-            return <li key={sortByOptionValue}> {sortByOption} </li>
+            return <li key={sortByOptionValue} className={this.getSortbyClass(sortByOptionValue)}> {sortByOption} </li>
         })
     }
 
