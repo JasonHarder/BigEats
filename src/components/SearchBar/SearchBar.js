@@ -7,6 +7,16 @@ const sortByOptions= {
     'Most Reviewed' : 'review_count'
 }
 
+function getSortbyClass (sortByOption) {
+    if (this.sortBy.state === sortByOption) {
+        return 'active'
+    } else {
+        return ''
+    }
+
+}
+// ^^^ getSortByClass would not return anything if I did not refer to this.state
+// since it is in the this.state object
 class Searchbar extends React.Component {
     constructor(props) {
         super(props)
@@ -23,6 +33,8 @@ class Searchbar extends React.Component {
             return <li key={sortByOptionValue}> {sortByOption} </li>
         })
     }
+
+
     render() {
         return(
         <div className="SearchBar">
