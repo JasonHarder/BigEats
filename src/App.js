@@ -17,16 +17,21 @@ const business = {
   reviewCount: 90
 }
 
-const businesses = [Business,Business,Business,Business,Business,Business]
+const businesses = [business,business,business,business,business,business]
 //Maybe not in capitals ^^
-class App extends Component {
+export class App extends Component {
+
+ searchYelp = (term,location,sortBy) => {
+    console.log(`${term},${location},${sortBy}`)
+    }
+
   render() {
     return (
       <div className="App">
-      <h1>Ravenous</h1>
-    <SearchBar />
-    <BusinessList businesses = {businesses}/>
-    </div>
+        <h1>Ravenous</h1>
+        <SearchBar searchYelp= {this.searchYelp} />
+        <BusinessList businesses = {businesses}/>
+      </div>
     );
   }
 }
