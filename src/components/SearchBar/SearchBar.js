@@ -72,7 +72,7 @@ class SearchBar extends React.Component {
     }
 
 
-    renderSortByOptions(){
+    renderSortByOptions() {
         return Object.keys(sortByOptions).map(sortByOption => {
             const sortByOptionValue = sortByOptions[sortByOption];
             return <li
@@ -84,24 +84,12 @@ class SearchBar extends React.Component {
         })
     }
 
-/*
-The purpose of renderSortByOptions() is to dynamically create the list items needed to display the sort options
-(Best Match, Highest Rated, Most Reviewed). This is to help future proof against potential changes to the Yelp API.
+/* renderSortByOptions -> goal is to "stick to" the selected element once selected in the browser.
+line 1 return object keys -> we map sort by options into their individual parts ,
+in this case only the keys ("best_match, rating , review_count") matter since theyre the dynamic part of the returned information
+line 2 Save it to a variable cause otherwise the return won't know what to do.
 
-The method should iterate through the keys and values of the sortByOptions object and return a list item.
-The list item elements should use the keys as an attribute, and the values as content.
-1st line in render sort by options asks , how do we break up the object and what do we name the pieces?
-2 we've already broken it down into keys but we need to access the value
-
-renderSortByOptions() {
-        return Object.keys(sortByOptions).map(sortByOption => {
-            let sortByOptionValue = sortByOptions[sortByOption];
-            return <li key={sortByOptionValue}> {sortByOption} </li>
-            return <li key={sortByOptionValue} className={this.getSortbyClass(sortByOptionValue)}> {sortByOption} </li>
-        })
-    }
-this ^^ function was returning undefined (in previous iterations) ,
-get better notes on the fix. */
+*/
 render() {
         return(
     <div className="SearchBar">
