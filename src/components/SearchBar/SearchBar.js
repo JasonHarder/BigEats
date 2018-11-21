@@ -18,6 +18,12 @@ This second method (handleSortByChange) updates the state by calling .setState t
 this seems to mean that the css class should === the state.
 */
 
+const sortByOptions = {
+            'Best Match': 'best_match',
+            'Highest Rated': 'rating',
+            'Most Reviewed': 'review_count'
+            }
+
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
@@ -27,18 +33,10 @@ class SearchBar extends React.Component {
                 sortBy: 'best_match'
             };
 
-
         this.handleTermChange = this.handleTermChange.bind(this)
         this.handleLocationChange = this.handleLocationChange.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
         this.handleSortByChange = this.handleSortByChange.bind(this)
-
-
-        this.sortByOptions= {
-            'Best Match': 'best_match',
-            'Highest Rated': 'rating',
-            'Most Reviewed': 'review_count'
-            }
 
         }
 
@@ -48,9 +46,6 @@ class SearchBar extends React.Component {
         } return ''
 
     }
-
-
-
 // sortBy is in the this.state object.
     handleSortByChange(sortByOption) {
         this.setState({sortBy: sortByOption})
@@ -68,34 +63,46 @@ class SearchBar extends React.Component {
 
 //if it cannot read event of undefined
     handleSearch(event) {
-        debugger
         this.props.searchYelp(
             this.state.term,
             this.state.location,
-            this.state.sortBy
+            this.state.sortBy,
         );
-        //event.preventDefault();
-    }
-
-/* Inside of .handleSearch(), call the passed down .searchYelp() method (located on props).
-Pass in the current state values of term, location, and sortBy as arguments.
-
-prevent default may go here otherwise
-
-On the next line, call event.preventDefault() to prevent the default action of
- clicking a link from triggering at the end of the method.*/
-
-    renderSortByOptions() {
-        return Object.keys(this.sortByOptions).map(sortByOption => {
-            let sortByOptionValue = this.sortByOptions[sortByOption];
-            return <li  key={sortByOptionValue}
-                        className={this.getSortbyClass(sortByOptionValue)}
-                        onClick={this.handleSortByChange}>{sortByOption} </li>
-        });
+        event.preventDefault();
     }
 
 
-    render() {
+    renderSortByOptions(){
+        return Object.keys(sortByOptions).map(sortByOption => {
+            const sortByOptionValue = sortByOptions[sortByOption];
+            return <li
+            className = {this.getSortbyClass(sortByOptionValue)}
+            key = {sortByOptionValue}
+            onClick = {this.handleSortByChange.bind(this, sortByOptionValue)}>
+            {sortByOptionValue}
+            </li>
+        })
+    }
+
+/*
+The purpose of renderSortByOptions() is to dynamically create the list items needed to display the sort options
+(Best Match, Highest Rated, Most Reviewed). This is to help future proof against potential changes to the Yelp API.
+
+The method should iterate through the keys and values of the sortByOptions object and return a list item.
+The list item elements should use the keys as an attribute, and the values as content.
+1st line in render sort by options asks , how do we break up the object and what do we name the pieces?
+2 we've already broken it down into keys but we need to access the value
+
+renderSortByOptions() {
+        return Object.keys(sortByOptions).map(sortByOption => {
+            let sortByOptionValue = sortByOptions[sortByOption];
+            return <li key={sortByOptionValue}> {sortByOption} </li>
+            return <li key={sortByOptionValue} className={this.getSortbyClass(sortByOptionValue)}> {sortByOption} </li>
+        })
+    }
+this ^^ function was returning undefined (in previous iterations) ,
+get better notes on the fix. */
+render() {
         return(
     <div className="SearchBar">
         <div className="SearchBar-sort-options">
@@ -111,7 +118,7 @@ On the next line, call event.preventDefault() to prevent the default action of
         </div>
     {/* may need to switch div closing tags back */}
         <div className="SearchBar-submit">
-            <a onClick = {this.handleSearch()}>Let's Go</a>
+            <a onClick = {this.handleSearch}>Let's Go</a>
         </div>
     </div>
         );
