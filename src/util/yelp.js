@@ -12,7 +12,9 @@ const search = (term,location,sortBy) => {
     return response.json()
   }).then(jsonResponse => {
     if (jsonResponse.businesses) {
-      return jsonResponse.businesses.map(jsonBusiness =>  )
+
+    } else {
+      // Catch statements go here (ish)
     }
   });
 }
