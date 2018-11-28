@@ -16,11 +16,11 @@ const search = (term,location,sortBy) => {
          return { id: business.id,
                   imageSrc: business.image_url,
                   //
-                  address: location.address1, /* (in locations) */
-                  city: location.city, /* */
-                  state: location.state,
-                  zipcode: location.zipCode,
-                  category: business.categories,
+                  address: business.location.address1, /* (in locations) */
+                  city: business.location.city, /* */
+                  state: business.location.state,
+                  zipcode: business.location.zipCode,
+                  category: business.categories.title,
                   rating: business.rating,
                   reviewCount: business.review_count
 // Probably have to further destructure the object to be sure.
