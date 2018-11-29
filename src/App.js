@@ -16,7 +16,7 @@ export class App extends Component {
   }
 
     searchYelp = (term,location,sortBy) => {
-      Yelp.search(term,location,sortBy).then( //mistake -> I thought something had to be defined here sort of like a function in a function , which tripped me up
+      Yelp.getSearch(term,location,sortBy).then( //mistake -> I thought something had to be defined here sort of like a function in a function , which tripped me up
         businesses => {
           this.setState({
             "businesses" : businesses
