@@ -3,7 +3,7 @@ TO run this app :
 npm install
 npm start
 
-features coming
+#features coming
 
 Make addresses clickable and have them open the address in Google Maps in a new tab
 
