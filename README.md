@@ -19,3 +19,5 @@ Allow you to search by pressing "Enter" (or "Return") on your keyboard, as oppos
 manually clicking
 
 Add autocompletion of addresses to the "Location" input
+
+testing
