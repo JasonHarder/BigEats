@@ -1,7 +1,12 @@
 {
-  "name": "ravenous",
-  "version": "0.1.0",
+  "name": "bigeats",
+  "version": "1.0.0",
   "private": true,
+  "engines": {
+    "npm": "6.4.1",
+    "node": "8.11.2"
+
+  }
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -22,5 +27,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "TO run this app :",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthematics/BigEats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthematics/BigEats/issues"
+  },
+  "homepage": "https://github.com/Anthematics/BigEats#readme"
 }
