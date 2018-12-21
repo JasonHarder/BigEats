@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBar from './Components/SearchBar/SearchBar.js'
 import BusinessList from './Components/BusinessList/BusinessList.js'
-import Business from './Components/Business/Business.js'
+//import Business from './Components/Business/Business.js'
 import Yelp from './Components/Util/Yelp'
 
 
