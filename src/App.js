@@ -7,7 +7,8 @@ import Business from './Components/Business/Business.js'
 import Yelp from './Components/Util/Yelp'
 
 
-//Maybe not in capitals ^^
+//Maybe not in capitals ^^git diff
+
 export class App extends Component {
   constructor(props) {
     super(props)
