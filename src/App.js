@@ -2,8 +2,8 @@
 import React from 'react';
 import logo from '../../logo.svg';
 import '../App/App.css';
-import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
+import BusinessList from '../BusinessList/BusinessList';
 import Yelp from '../../util/Yelp';
 
 //Maybe not in capitals ^^git diff
