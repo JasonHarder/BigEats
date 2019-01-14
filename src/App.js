@@ -1,11 +1,10 @@
 
 import React from 'react';
-import logo from '../../logo.svg';
-import '../App/App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import BusinessList from '../BusinessList/BusinessList';
 import Yelp from '../../util/Yelp';
-
+import logo from '../../logo.svg';
+import '../App.css';
 //Maybe not in capitals ^^git diff
 
 export class App extends Component {
