@@ -23,7 +23,7 @@ export class App extends Component {
       Yelp.searchYelp(term,location,sortBy).then(
         businesses => {
           this.setState({
-            'businesses' : businesses
+            businesses : businesses
           })
         }
       )

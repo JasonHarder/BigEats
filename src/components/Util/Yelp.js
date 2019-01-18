@@ -1,4 +1,5 @@
-const yelpApiKey=process.env.yelpApiKey
+const yelpApiKey = 
+
 
 const yelp = {
   searchYelp(term,location,sortBy) {
