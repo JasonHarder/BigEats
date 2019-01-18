@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SearchBar from './Components/SearchBar/SearchBar'
-import BusinessList from './Components/BusinessList/BusinessList'
-import Business from './Components/Business/Business'
-import Yelp from './Components/Util/Yelp'
+import SearchBar from './components/SearchBar/SearchBar'
+import BusinessList from './components/BusinessList/BusinessList'
+import Business from './components/Business/Business'
+import Yelp from './components/Util/Yelp'
 
 //Maybe not in capitals ^^git diff
 

@@ -1,4 +1,4 @@
-const yelpApiKey = 
+const yelpApiKey=process.env.yelpApiKey
 
 
 const yelp = {
