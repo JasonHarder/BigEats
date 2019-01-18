@@ -27,14 +27,13 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "description": "TO run this app :",
+  "description": "stuff",
   "main": "index.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anthematics/BigEats.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Anthematics/BigEats/issues"
