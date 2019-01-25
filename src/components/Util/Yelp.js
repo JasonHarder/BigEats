@@ -1,4 +1,4 @@
-const yelpApiKey=process.env.yelpApiKey
+const yelpApiKey='ZTRh07pfpWfTysY_hVOXwPujDNbCN97dNOe22JSuXFrvmMgMMNREzzq5tja24ZLigioM08Sa8vt9XjLkJx2HQLFGFR7mBSvzyf-IWyBT5ux0QD1SNVrRXT8OQN31W3Yx'
 
 
 const yelp = {
